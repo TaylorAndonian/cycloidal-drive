@@ -1,0 +1,24 @@
+category,item,spec,qty,have/buy,notes
+printed,rear_cup,PA-CF (or PC); cad/rear_cup.stl,1,print,motor plate + shell in one piece; ~309 cm3 solid volume
+printed,front_plate,PA-CF (or PC); cad/front_plate.stl,1,print,holds 51 pin ends + 6816
+printed,disc,PA-CF; cad/disc.stl,2,print,identical discs; 12 mm thick
+printed,eccentric_shaft,PC or PA-CF; cad/eccentric_shaft.stl,1,print,one piece; cams at 180 deg
+printed,carrier_rear_plate,PA-CF; cad/carrier_rear_plate.stl,1,print,rides in the 6809
+printed,output_flange,PA-CF or PC; cad/output_flange.stl,1,print,rides in the 6816
+printed,washer_end (2.9 mm),any rigid filament; cad/washer_end.stl,12,print,2 per output pin (outer ends of the roller stack)
+printed,washer_mid (6.0 mm),any rigid filament; cad/washer_mid.stl,6,print,1 per output pin (between the two rollers)
+printed,coupon_pins_inserts,same material/profile as cup and front plate; cad/coupon_pins_inserts.stl,1,print,print FIRST - calibrates pin press fits and insert holes
+printed,coupon_bearings,same material/profile as discs/shaft/flange; cad/coupon_bearings.stl,1,print,print FIRST - calibrates bearing pockets and journals
+bearing,608ZZ (8x22x7),output-pin rollers + input shaft front journal,13,have,12 rollers + 1 journal; C0 ~1.37 kN (verify)
+bearing,6809-2RS (45x58x7),carrier rear support,1,have,inner race press on carrier boss; outer race light press in cup floor
+bearing,6902-2RS (15x28x7),eccentric bearings (one per disc),2,buy,C ~4.4 kN / C0 ~2.2 kN (verify); ~$2 ea
+bearing,6801-2RS (12x21x5),input shaft rear journal,1,buy,lightly loaded (~230 N)
+bearing,6816-2RS (80x100x10),output flange support,1,buy,thin section; ~$10-15; C0 ~12 kN (verify)
+pin,dowel 4 mm x 60 mm hardened (ISO 8734 / DIN 6325 m6),ring pins,51 (+4 spare),buy,hardened steel; 4 mm h6/h7 precision shafting cut to 60 mm also works
+pin,dowel 8 mm x 45 mm hardened (ISO 8734 / DIN 6325 m6),output pins,6 (+1 spare),buy,carries 325 N per pin at 36 Nm
+fastener,M3 x 8 SHCS,motor to rear cup (head sits below the 6809 pocket floor),4,buy,5.5 mm thread engagement into NEMA17 - check it does not bottom; M3x6 if it does
+fastener,M3 x 20 SHCS,front plate to shell inserts,8,buy,15.3 mm in plate (4.5 mm counterbore) + 4.7 mm into insert
+fastener,M3 heat-set insert 4.0 OD x 5.7 long (brass),8 shell top + 6 flange face,14 (+2),buy,hole dia 4.0 x 7.0 deep with 4.6 mm countersink; verify vs your insert datasheet
+fastener,M3 SHCS for your load,output interface: length = your flange thickness + 5 mm,6,buy,6 inserts on PCD 48 + 10 mm pilot hole at the centre
+consumable,PTFE or lithium grease,ring-pin contacts and disc thrust faces,1,buy,dry running costs ~10-15 % efficiency
+consumable,retaining compound (e.g. Loctite 648) - optional,bearing outer races in printed pockets if a press fit relaxes,1,optional,verify compatibility with your filament
