@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+*~recovered*
+# Big generated mesh: use assembly.step instead
+**/assembly.stl
+*.xlsx
