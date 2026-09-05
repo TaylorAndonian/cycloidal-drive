@@ -1,0 +1,230 @@
+<title>Cycloidal 50:1 Build Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#f2f4f5; --surface:#ffffff; --surface-2:#e9edef;
+  --ink:#16191d; --ink-2:#3d464e; --muted:#5b6670;
+  --rule:#d4dade; --rule-2:#b9c2c8;
+  --blue:#1f4e79; --blue-soft:#e3edf5;
+  --brass:#8a641f; --brass-soft:#f5eddc;
+  --stop:#993122; --stop-soft:#f8e6e2;
+  --go:#2c6249; --go-soft:#e2f0e9;
+  --sheet:#fcfcfb; --sheet-rule:#cdd3d7;
+  --shadow:0 1px 2px rgba(20,30,40,.07);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#12161a; --surface:#191e23; --surface-2:#222a31;
+    --ink:#e7eaec; --ink-2:#b4bec6; --muted:#85929c;
+    --rule:#2a333a; --rule-2:#3a454e;
+    --blue:#79b0dc; --blue-soft:#17293a;
+    --brass:#d3a94f; --brass-soft:#2b2415;
+    --stop:#e08672; --stop-soft:#331d18;
+    --go:#7dc0a1; --go-soft:#152a22;
+    --sheet:#f4f5f3; --sheet-rule:#4a545c;
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#12161a; --surface:#191e23; --surface-2:#222a31;
+  --ink:#e7eaec; --ink-2:#b4bec6; --muted:#85929c;
+  --rule:#2a333a; --rule-2:#3a454e;
+  --blue:#79b0dc; --blue-soft:#17293a;
+  --brass:#d3a94f; --brass-soft:#2b2415;
+  --stop:#e08672; --stop-soft:#331d18;
+  --go:#7dc0a1; --go-soft:#152a22;
+  --sheet:#f4f5f3; --sheet-rule:#4a545c;
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,sans-serif;
+  font-size:15px; line-height:1.62; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 96px}
+h1,h2,h3,.cond{font-family:"Barlow Condensed","IBM Plex Sans",system-ui,sans-serif;font-weight:700;letter-spacing:.01em}
+code,.mono,.num{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
+
+/* ---------- title block ---------- */
+.titleblock{
+  border:1px solid var(--rule-2); background:var(--surface);
+  margin:28px 0 0; box-shadow:var(--shadow);
+}
+.tb-main{padding:22px 24px 18px;border-bottom:1px solid var(--rule)}
+.tb-eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0 0 6px}
+.titleblock h1{font-size:clamp(30px,5.2vw,46px);line-height:1.02;margin:0 0 8px;text-wrap:balance}
+.tb-sub{margin:0;color:var(--ink-2);max-width:62ch}
+.tb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-top:0}
+.tb-cell{padding:12px 16px 13px;border-right:1px solid var(--rule)}
+.tb-cell:last-child{border-right:0}
+.tb-k{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:3px}
+.tb-v{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:20px;line-height:1.2;color:var(--ink)}
+.tb-v small{font-weight:500;font-size:13px;color:var(--muted)}
+
+/* ---------- progress ---------- */
+.progress{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--rule);margin:0 -20px 0;padding:9px 20px 8px}
+.progress-in{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.pbar{flex:1 1 190px;height:5px;background:var(--surface-2);border-radius:99px;overflow:hidden;min-width:120px}
+.pbar i{display:block;height:100%;width:0%;background:var(--blue);transition:width .3s ease}
+.pcount{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-2);white-space:nowrap}
+.psave{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);min-width:74px}
+.btn{font-family:"IBM Plex Sans",sans-serif;font-size:12.5px;padding:4px 11px;border:1px solid var(--rule-2);background:var(--surface);color:var(--ink-2);border-radius:3px;cursor:pointer}
+.btn:hover{border-color:var(--blue);color:var(--blue)}
+.btn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* ---------- sections ---------- */
+section{margin-top:44px}
+.sec-head{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:6px;margin-bottom:18px}
+.sec-head h2{font-size:26px;margin:0;flex:1}
+.sec-head .tag{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+p{margin:0 0 14px;max-width:68ch}
+.lede{color:var(--ink-2)}
+
+/* ---------- step ---------- */
+.step{display:grid;grid-template-columns:58px 1fr;gap:0 18px;padding:26px 0 8px;border-top:1px solid var(--rule)}
+.step:first-of-type{border-top:0}
+.stepnum{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:40px;line-height:.9;color:var(--blue);text-align:right;padding-top:2px}
+.stepbody h3{font-size:22px;margin:0 0 4px}
+.stepbody .why{color:var(--muted);font-size:13.5px;margin:0 0 14px;max-width:64ch}
+.two{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:22px;align-items:start}
+@media(max-width:820px){.two{grid-template-columns:1fr}.step{grid-template-columns:42px 1fr;gap:0 12px}.stepnum{font-size:30px}}
+
+/* ---------- drawing sheet ---------- */
+.sheet{background:var(--sheet);border:1px solid var(--sheet-rule);padding:6px;position:relative}
+.sheet svg{display:block;width:100%;height:auto}
+.sheet figcaption{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:#5b6670;padding:5px 4px 2px;border-top:1px solid #e2e5e7;margin-top:4px;line-height:1.45}
+figure{margin:0}
+
+/* ---------- checklist ---------- */
+ol.acts{list-style:none;margin:0;padding:0;counter-reset:act}
+ol.acts li{position:relative;padding:7px 0 7px 30px;border-bottom:1px dotted var(--rule);font-size:14.4px}
+ol.acts li:last-child{border-bottom:0}
+ol.acts input{position:absolute;left:0;top:11px;width:16px;height:16px;accent-color:var(--blue);cursor:pointer;margin:0}
+ol.acts label{cursor:pointer;display:block}
+ol.acts input:checked + label{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--rule-2)}
+ol.acts input:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* ---------- callouts ---------- */
+.note{border-left:3px solid var(--rule-2);padding:2px 0 2px 13px;margin:14px 0;font-size:13.8px;color:var(--ink-2);max-width:66ch}
+.gate{border:1px solid var(--go);background:var(--go-soft);padding:13px 15px;margin:16px 0;max-width:66ch}
+.gate .ghead{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--go);margin-bottom:5px;font-weight:600}
+.stop{border:1px solid var(--stop);background:var(--stop-soft);padding:13px 15px;margin:16px 0;max-width:66ch}
+.stop .ghead{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--stop);margin-bottom:5px;font-weight:600}
+.brass{border:1px solid var(--brass);background:var(--brass-soft);padding:13px 15px;margin:16px 0;max-width:66ch}
+.brass .ghead{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--brass);margin-bottom:5px;font-weight:600}
+.gate p,.stop p,.brass p,.note p{margin:0 0 7px;max-width:none}
+.gate p:last-child,.stop p:last-child,.brass p:last-child,.note p:last-child{margin-bottom:0}
+
+/* ---------- tables ---------- */
+.tblwrap{overflow-x:auto;margin:0 0 18px}
+table{border-collapse:collapse;width:100%;font-size:13.6px;min-width:480px}
+th,td{text-align:left;padding:7px 11px 7px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:500;border-bottom:1px solid var(--rule-2)}
+td.n,th.n{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.hi td{background:var(--blue-soft)}
+.dim{color:var(--blue);font-weight:500}
+.chip{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;padding:1px 6px;border:1px solid var(--rule-2);border-radius:2px;color:var(--ink-2);white-space:nowrap}
+footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--rule);color:var(--muted);font-size:12.5px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+
+<div class="titleblock">
+  <div class="tb-main">
+    <p class="tb-eyebrow">Build card &middot; cycloidal-50-d100 &middot; rev A</p>
+    <h1>50:1 Cycloidal Reducer</h1>
+    <p class="tb-sub">Bench assembly for the &Oslash;100 arm-drive build. Every dimension here is read from <code>cad/layout.json</code> and the parameters block in <code>scripts/cad.py</code> &mdash; if you change a parameter and re-run, re-read these numbers.</p>
+  </div>
+  <div class="tb-grid">
+    <div class="tb-cell"><span class="tb-k">Envelope</span><span class="tb-v">&Oslash;100 &times; 88.1 <small>mm</small></span></div>
+    <div class="tb-cell"><span class="tb-k">Rated torque</span><span class="tb-v">18 <small>Nm continuous</small></span></div>
+    <div class="tb-cell"><span class="tb-k">Ring</span><span class="tb-v">51 &times; &Oslash;3 <small>pins on &Oslash;80</small></span></div>
+    <div class="tb-cell"><span class="tb-k">Discs</span><span class="tb-v">2 &times; 14 <small>mm, 180&deg;</small></span></div>
+    <div class="tb-cell"><span class="tb-k">Build time</span><span class="tb-v">~2 <small>hours + printing</small></span></div>
+  </div>
+</div>
+
+<div class="progress">
+  <div class="progress-in">
+    <span class="pcount"><b id="pdone">0</b> / <span id="ptotal">0</span> steps ticked</span>
+    <span class="pbar"><i id="pfill"></i></span>
+    <span class="psave" id="psave"></span>
+    <button class="btn" id="reset" type="button">Clear all ticks</button>
+  </div>
+</div>
+
+<section id="before">
+  <div class="sec-head"><h2>Before you touch a part</h2><span class="tag">gate 0</span></div>
+  <p class="lede">Two things decide whether this build works, and both happen before assembly: the press fits, and the disc material. Get them wrong and no amount of careful assembly saves it.</p>
+
+  <div class="two">
+    <div>
+      <h3 class="cond" style="font-size:17px;margin:0 0 8px">Print check</h3>
+      <ol class="acts" data-sec="pre">
+        <li><input type="checkbox" id="pre-1"><label for="pre-1">Both <b>discs printed in PA-CF</b>, 100&nbsp;% infill, 6 walls, 0.16&nbsp;mm layers. PC yields at 18&nbsp;Nm &mdash; exactly the rated torque, so PC discs give zero margin.</label></li>
+        <li><input type="checkbox" id="pre-2"><label for="pre-2"><b>Rear cup and front plate in PA-CF</b> (PC acceptable, &minus;40&nbsp;% stiffness). These two plates are the entire anti-skip argument.</label></li>
+        <li><input type="checkbox" id="pre-3"><label for="pre-3"><b>Eccentric shaft in PC</b>, printed vertically on its &Oslash;12 end, 0.12&nbsp;mm layers, 100&nbsp;% infill. The 45&deg; cones under the steps are modelled &mdash; no supports.</label></li>
+        <li><input type="checkbox" id="pre-4"><label for="pre-4">Filament was <b>dried</b>. Wet PA-CF loses a third of its strength and these parts are all press fits.</label></li>
+        <li><input type="checkbox" id="pre-5"><label for="pre-5">Discs measured across the lobe tips: <span class="dim mono">79.16&nbsp;mm</span> &plusmn;0.15. Out by more than that and the profile clearance is wrong.</label></li>
+      </ol>
+    </div>
+    <div>
+      <h3 class="cond" style="font-size:17px;margin:0 0 8px">Coupon calibration</h3>
+      <p style="font-size:14px">Print <code>coupon_pins_inserts.stl</code> in the <em>cup / front-plate</em> material and profile, and <code>coupon_bearings.stl</code> in the <em>disc / flange</em> material. Same nozzle, same speeds, same layer height as the real parts.</p>
+      <ol class="acts" data-sec="pre">
+        <li><input type="checkbox" id="pre-6"><label for="pre-6">Try a &Oslash;3 dowel in each hole of the &Oslash;3 row. Pick the one that takes the pin with a <b>firm arbor-press push and no cracking</b>.</label></li>
+        <li><input type="checkbox" id="pre-7"><label for="pre-7">If that hole is not <span class="mono">2.95</span>, shift <code>FIT_PIN_PRESS_REAR</code> by the difference and re-run <code>cad.py</code>.</label></li>
+        <li><input type="checkbox" id="pre-8"><label for="pre-8">Same for the &Oslash;8 row &rarr; <code>FIT_OUTPIN_PRESS</code>, and the bearing pockets &rarr; <code>FIT_BRG_OD_IN_PLASTIC</code>.</label></li>
+        <li><input type="checkbox" id="pre-9"><label for="pre-9">Melt an insert into each of the four insert holes. The right one goes in square, raises a small bead of plastic, and strips its thread before it pulls out.</label></li>
+      </ol>
+      <div class="stop">
+        <div class="ghead">Do not skip this</div>
+        <p>A loose front-plate pin hole turns a pin supported at both ends into a cantilever. That single change is most of the difference between this design and the one that skips.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="cond" style="font-size:17px;margin:26px 0 8px">Tools</h3>
+  <p style="font-size:14px">Arbor press or a vice with soft jaws &middot; 2.5&nbsp;mm hex key (ball end helps) &middot; soldering iron with an insert tip, 220&ndash;240&nbsp;&deg;C &middot; dial indicator + stand or V-blocks &middot; calipers &middot; small square &middot; PTFE or lithium grease &middot; deburring tool.</p>
+</section>
+
+<section id="parts">
+  <div class="sec-head"><h2>What goes where</h2><span class="tag">reference</span></div>
+  <p class="lede">Lay these out before you start. Positions are millimetres from the motor mounting face, which is <span class="mono">z&nbsp;=&nbsp;0</span> throughout this card and in the drawings.</p>
+
+  <div class="tblwrap">
+  <table>
+    <thead><tr><th>Bearing</th><th>Size</th><th>Qty</th><th>Where</th><th class="n">Sits at z</th><th>Fit</th></tr></thead>
+    <tbody>
+      <tr><td>6801-2RS</td><td class="n">12&times;21&times;5</td><td class="n">1</td><td>Input shaft rear journal, <b>in the carrier plate</b></td><td class="n">18.5 &ndash; 23.5</td><td>OD press in plastic</td></tr>
+      <tr><td>6804-2RS</td><td class="n">20&times;32&times;7</td><td class="n">1</td><td>Carrier rear support, in the cup floor</td><td class="n">7.7 &ndash; 14.7</td><td>OD press / ID on boss</td></tr>
+      <tr class="hi"><td>6802-2RS</td><td class="n">15&times;24&times;5</td><td class="n">2</td><td>Eccentric bearings, one per cam</td><td class="n">28.4 &ndash; 33.4 &middot; 43.4 &ndash; 48.4</td><td>ID press on cam, OD press in disc</td></tr>
+      <tr><td>625ZZ</td><td class="n">5&times;16&times;5</td><td class="n">24</td><td>Output rollers &mdash; four per pin, in two pairs</td><td class="n">25.9 &ndash; 35.9 &middot; 40.9 &ndash; 50.9</td><td>slip on pin</td></tr>
+      <tr><td>608ZZ</td><td class="n">8&times;22&times;7</td><td class="n">1</td><td>Input shaft front journal, in the flange</td><td class="n">53.3 &ndash; 60.3</td><td>OD press in plastic</td></tr>
+      <tr><td>6810-2RS</td><td class="n">50&times;65&times;7</td><td class="n">1</td><td>Output bearing, flange boss to front plate</td><td class="n">67.3 &ndash; 74.3</td><td>ID press on boss, OD press in plate</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tblwrap">
+  <table>
+    <thead><tr><th>Fastener / pin</th><th>Size</th><th>Qty</th><th>Where</th><th>Depth / note</th></tr></thead>
+    <tbody>
+      <tr><td>Ring pin</td><td class="n">&Oslash;3 &times; 60</td><td class="n">51</td><td>Cup floor &rarr; front plate</td><td class="n">8.0 in cup, 13.2 in plate</td></tr>
+      <tr><td>Output pin</td><td class="n">&Oslash;5 &times; 50</td><td class="n">6</td><td>Carrier plate &rarr; flange</td><td class="n">8.0 through carrier, 12.2 in flange</td></tr>
+      <tr><td>Heat-set insert</td><td class="n">M3, &Oslash;4.0 &times; 5.7</td><td class="n">18</td><td>8 shell top &middot; 6 flange face &middot; 4 cup back</td><td class="n">hole &Oslash;4.0 &times; 9.0 deep</td></tr>
+      <tr><td>SHCS, motor</td><td class="n">M3 &times; 6 or 8</td><td class="n">4</td><td>Through the cup floor into the motor</td><td>see step 1 &mdash; measure first</td></tr>
+      <tr><td>SHCS, tie bolts</td><td class="n">M3 &times; 30</td><td class="n">8</td><td>Front plate &rarr; shell inserts</td><td class="n">22.8 through + 7.2 engaged</td></tr>
+      <tr><td>SHCS, arm</td><td class="n">M3 &times; (root + 5)</td><td class="n">6</td><td>Arm &rarr; flange face, &Oslash;58 PCD</td><td>&Oslash;10 pilot takes the shear</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="steps">
+  <div class="sec-head"><h2>Assembly</h2><span class="tag">8 steps</span></div>
+  <p class="lede">Each drawing is the real CAD cross-section on the plane through the eccentric. The part you are fitting is drawn solid and dark; everything already fitted is faded; everything still to come is a dotted ghost.</p>

@@ -1,0 +1,232 @@
+{
+ "disc lobe count == N_LOBES": {
+  "ok": true,
+  "detail": "50 lobes counted from the STEP section"
+ },
+ "disc tip radius matches equations": {
+  "ok": true,
+  "detail": "STEP 38.990 vs analytic 38.990"
+ },
+ "disc root radius matches equations": {
+  "ok": true,
+  "detail": "STEP 37.810 vs analytic 37.810"
+ },
+ "disc STEP profile deviation from equations < 0.01 mm": {
+  "ok": true,
+  "detail": "max deviation 2.0 um"
+ },
+ "rear cup: 51 ring-pin holes": {
+  "ok": true,
+  "detail": "51 holes found"
+ },
+ "rear cup: pin circle dia == 2*R_PIN": {
+  "ok": true,
+  "detail": "measured 80.000 mm (sd 0.0 um)"
+ },
+ "front plate: 51 ring-pin holes": {
+  "ok": true,
+  "detail": "51 holes found"
+ },
+ "front plate: pin circle dia == 2*R_PIN": {
+  "ok": true,
+  "detail": "measured 80.000 mm"
+ },
+ "carrier: 6 output-pin holes on 2*R_OUT": {
+  "ok": true,
+  "detail": "6 holes, dia 48.000"
+ },
+ "all ligaments >= MIN_WALL (0.8 mm)": {
+  "ok": true,
+  "detail": "thinnest 1.00 mm"
+ },
+ "ligaments_mm": {
+  "disc: lobe root to roller hole": 5.169999999999995,
+  "disc: roller hole to roller hole": 6.719999999999995,
+  "disc: roller hole to bearing bore": 3.385,
+  "disc: bearing ledge": 1.0,
+  "plates: ring-pin hole to ring-pin hole": 1.924872490715427,
+  "front plate: pin hole to output-bearing bore": 6.0,
+  "front plate: pin hole to OD": 8.5,
+  "front plate: bolt hole to pin hole (radial)": 3.299999999999997,
+  "front plate: bolt hole to OD": 1.7999999999999972,
+  "front plate: lip to flange boss (radial gap)": 3.9849999999999994,
+  "front plate: lip overlap on the outer race": 3.5,
+  "cup: insert hole wall in shell (each side)": 1.5,
+  "cup: ring pins to shell wall (radial)": 1.5,
+  "cup: disc lobe tips to shell (radial)": 3.4200000000000017,
+  "cup: pin hole to carrier-bearing pocket": 22.5,
+  "cup: floor under pin holes": 7.0,
+  "cup: mount insert to ring pin hole (radial)": 1.5,
+  "cup: mount insert to OD": 3.0,
+  "cup: motor cbore to carrier pocket": 2.6703102167829726,
+  "cup: floor under motor screw head": 2.5,
+  "cup: carrier pocket floor thickness": 7.7,
+  "shaft: cam wall around the D-bore": 4.36,
+  "shaft: rear journal wall around the D-bore": 3.45,
+  "carrier: boss wall": 3.0,
+  "carrier: floor under the rear input bearing": 3.0,
+  "carrier: rear input pocket to output pin hole": 11.0,
+  "carrier: output pin hole to boss (radial)": 11.5,
+  "carrier: output pin hole to OD": 3.0,
+  "flange: floor above the output pin holes": 1.5,
+  "flange: output pin hole to body OD": 4.5,
+  "flange: front-journal pocket to output pin hole": 10.5,
+  "flange: arm insert to face-plate OD": 5.0,
+  "flange: arm insert to bearing boss (radial)": 2.0,
+  "flange: face plate under the arm inserts": 1.0,
+  "flange: body to front-plate bore (radial gap)": 1.5,
+  "washer: wall": 1.1
+ },
+ "bearing seat: 6801-2RS OD in the carrier plate": {
+  "ok": true,
+  "detail": "100 % of the seat wall is solid"
+ },
+ "bearing seat: 6804-2RS OD in the rear cup": {
+  "ok": true,
+  "detail": "100 % of the seat wall is solid"
+ },
+ "bearing seat: 6804-2RS ID on the carrier boss": {
+  "ok": true,
+  "detail": "96 % of the seat wall is solid"
+ },
+ "bearing seat: 608ZZ OD in the output flange": {
+  "ok": true,
+  "detail": "100 % of the seat wall is solid"
+ },
+ "bearing seat: 6810-2RS OD in the front plate": {
+  "ok": true,
+  "detail": "100 % of the seat wall is solid"
+ },
+ "bearing seat: 6810-2RS ID on the flange boss": {
+  "ok": true,
+  "detail": "100 % of the seat wall is solid"
+ },
+ "bearing seat: 6802-2RS OD in the disc bore": {
+  "ok": true,
+  "detail": "100 % of the seat wall is solid"
+ },
+ "nothing intrudes into the 6801-2RS envelope": {
+  "ok": true,
+  "detail": "0 mm3 of other parts inside its envelope"
+ },
+ "nothing intrudes into the 6804-2RS envelope": {
+  "ok": true,
+  "detail": "0 mm3 of other parts inside its envelope"
+ },
+ "rear_cup: STEP valid, STL watertight, volumes agree": {
+  "ok": true,
+  "detail": "STEP 183222 mm3, STL 183147 mm3, watertight=True"
+ },
+ "front_plate: STEP valid, STL watertight, volumes agree": {
+  "ok": true,
+  "detail": "STEP 97668 mm3, STL 97627 mm3, watertight=True"
+ },
+ "eccentric_shaft: STEP valid, STL watertight, volumes agree": {
+  "ok": true,
+  "detail": "STEP 6519 mm3, STL 6516 mm3, watertight=True"
+ },
+ "disc: STEP valid, STL watertight, volumes agree": {
+  "ok": true,
+  "detail": "STEP 39027 mm3, STL 39139 mm3, watertight=True"
+ },
+ "carrier_rear_plate: STEP valid, STL watertight, volumes agree": {
+  "ok": true,
+  "detail": "STEP 19955 mm3, STL 19947 mm3, watertight=True"
+ },
+ "output_flange: STEP valid, STL watertight, volumes agree": {
+  "ok": true,
+  "detail": "STEP 99200 mm3, STL 99159 mm3, watertight=True"
+ },
+ "washer_end: STEP valid, STL watertight, volumes agree": {
+  "ok": true,
+  "detail": "STEP 53 mm3, STL 53 mm3, watertight=True"
+ },
+ "washer_mid: STEP valid, STL watertight, volumes agree": {
+  "ok": true,
+  "detail": "STEP 111 mm3, STL 111 mm3, watertight=True"
+ },
+ "coupon_pins_inserts: STEP valid, STL watertight, volumes agree": {
+  "ok": true,
+  "detail": "STEP 22006 mm3, STL 22008 mm3, watertight=True"
+ },
+ "coupon_bearings: STEP valid, STL watertight, volumes agree": {
+  "ok": true,
+  "detail": "STEP 50060 mm3, STL 50065 mm3, watertight=True"
+ },
+ "no interference: rear_cup vs carrier_rear_plate": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: rear_cup vs eccentric_shaft": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: rear_cup vs disc A": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: front_plate vs output_flange": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: front_plate vs disc B": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: carrier_rear_plate vs eccentric_shaft": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: carrier_rear_plate vs disc A": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: output_flange vs disc B": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: output_flange vs eccentric_shaft": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: disc A vs disc B": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: disc A vs ring pins (should only touch)": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: disc B vs ring pins (should only touch)": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: disc A vs rollers A (should only touch)": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: disc A vs eccentric bearing A OD": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: output pins vs front_plate": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: output pins vs rear_cup": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: ring pins vs output_flange": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: ring pins vs carrier_rear_plate": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ },
+ "no interference: eccentric_shaft vs disc A (bore)": {
+  "ok": true,
+  "detail": "intersection volume 0.00 mm3"
+ }
+}

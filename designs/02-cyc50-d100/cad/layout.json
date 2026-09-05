@@ -1,0 +1,84 @@
+{
+ "z_floor_top": 15.0,
+ "pocket_carrier_depth": 7.3,
+ "z_pocket_carrier_bot": 7.7,
+ "z_carrier_rear": 15.5,
+ "z_carrier_front": 23.5,
+ "z_boss_rear": 8.0,
+ "z_brg_rear_top": 23.5,
+ "z_brg_rear_bot": 18.5,
+ "carrier_brg_floor": 3.0,
+ "z_discA": [
+  23.9,
+  37.9
+ ],
+ "z_discB": [
+  38.9,
+  52.9
+ ],
+ "z_flange_rear": 53.3,
+ "z_rollerA": [
+  25.9,
+  35.9
+ ],
+ "z_rollerB": [
+  40.9,
+  50.9
+ ],
+ "washer_1": 2.3999999999999986,
+ "washer_mid": 5.0,
+ "washer_3": 2.3999999999999986,
+ "z_shaft_rear": 10.0,
+ "z_camA": [
+  28.4,
+  33.4
+ ],
+ "z_camB": [
+  43.4,
+  48.4
+ ],
+ "z_collar": [
+  33.4,
+  43.4
+ ],
+ "z_flange_608_bot": 60.3,
+ "z_shaft_front": 59.8,
+ "d_bore_depth": 12.5,
+ "z_midring": [
+  38.4,
+  41.4
+ ],
+ "z_flange_body_front": 67.3,
+ "z_brg_output": [
+  67.3,
+  74.3
+ ],
+ "z_face_plate": [
+  78.1,
+  88.1
+ ],
+ "z_flange_face": 88.1,
+ "flange_boss_len": 10.799999999999997,
+ "z_front_rear": 53.8,
+ "z_lip": [
+  74.6,
+  76.6
+ ],
+ "z_front_face": 76.6,
+ "front_plate_T": 22.799999999999997,
+ "z_shell_top": 53.8,
+ "z_ringpin": [
+  7.0,
+  67.0
+ ],
+ "ringpin_front_engage": 13.200000000000003,
+ "ringpin_free_span": 38.8,
+ "z_outpin": [
+  15.5,
+  65.5
+ ],
+ "outpin_flange_engage": 12.200000000000003,
+ "r_shell_in": 43.0,
+ "disc_hole_d": 17.28,
+ "overall_length": 88.1
+}

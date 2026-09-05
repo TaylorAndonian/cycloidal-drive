@@ -1,0 +1,189 @@
+<section id="runin">
+  <div class="sec-head"><h2>Run-in, then the arm</h2><span class="tag">commissioning</span></div>
+  <div class="two">
+    <div>
+      <ol class="acts" data-sec="ri">
+        <li><input type="checkbox" id="ri-1"><label for="ri-1">Run it <b>unloaded for 20&ndash;30 minutes</b> at moderate speed, both directions. The first hours are when the printed lobes bed in.</label></li>
+        <li><input type="checkbox" id="ri-2"><label for="ri-2">Stop and feel the housing. Warm is fine; too hot to hold means something is binding, not bedding in.</label></li>
+        <li><input type="checkbox" id="ri-3"><label for="ri-3">Re-check backlash after run-in. A small increase is normal bedding; a large one means the lobes are yielding &mdash; back the torque off.</label></li>
+        <li><input type="checkbox" id="ri-4"><label for="ri-4">Bolt the gearbox to the machine through the <b>4 inserts in the cup's back face</b>, never through the front plate.</label></li>
+        <li><input type="checkbox" id="ri-5"><label for="ri-5">Fit the arm: &Oslash;10 spigot into the pilot bore first, then the 6 M3 on the &Oslash;58 circle. <b>The pilot carries the shear, the bolts carry the moment.</b></label></li>
+        <li><input type="checkbox" id="ri-6"><label for="ri-6">Record the arm tip height at a known pose. Re-measure monthly &mdash; that is how you catch flange creep before it becomes a problem.</label></li>
+      </ol>
+    </div>
+    <div>
+      <div class="brass">
+        <div class="ghead">Torque budget</div>
+        <p>Rated <b>18&nbsp;Nm continuous</b>. Lobe contact stress reaches PA-CF yield at about <b>30&nbsp;Nm</b>, so keep peaks under ~24&nbsp;Nm.</p>
+        <p>A NEMA&nbsp;17 at 0.45&nbsp;Nm delivers roughly 19&nbsp;Nm through this at 85&nbsp;% efficiency, so the motor is effectively the fuse. The way to overload it is to <b>back-drive the arm into something</b> &mdash; that path bypasses the motor entirely.</p>
+      </div>
+      <div class="note">
+        <p>Orientation note: with the arm horizontal, gravity loads the same side of the ring continuously and that side wears first. If the arm has a home position, vary it. The pin circle is symmetric, so rotating the front plate 180&deg; later gives you a fresh side.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trouble">
+  <div class="sec-head"><h2>If something is wrong</h2><span class="tag">diagnosis</span></div>
+  <div class="tblwrap">
+  <table>
+    <thead><tr><th>Symptom</th><th>Most likely cause</th><th>What to do</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Periodic tight spot, once per input revolution</td>
+        <td>Cam runout, or a 6802 pressed on crooked</td>
+        <td>Strip to step 3 and re-run the indexing check. Reprint the shaft in PC if runout is off.</td>
+      </tr>
+      <tr>
+        <td>Tight spot at a fixed housing position</td>
+        <td>A leaning or bent ring pin</td>
+        <td>Straightedge across the pin ends to find it. Replace the pin; reprint the cup if the hole has gone loose.</td>
+      </tr>
+      <tr>
+        <td>Uniformly stiff, warms quickly at no load</td>
+        <td>Profile clearance too small, or the printed pin circle is undersize</td>
+        <td>Measure first, then raise <code>PROFILE_CLR</code> by 0.03 at a time and reprint the discs.</td>
+      </tr>
+      <tr>
+        <td>Backlash grows over hours of use</td>
+        <td>Lobe flanks creeping &mdash; running above ~24&nbsp;Nm, or dry</td>
+        <td>Re-grease, cap peak torque. If it persists, the fix is machined POM or nylon discs, not thicker printed ones.</td>
+      </tr>
+      <tr>
+        <td>Clunk on load reversal</td>
+        <td>Bedded-in flanks plus the normal 0.10&nbsp;mm profile clearance</td>
+        <td>Expected at some level. If it grows, treat as the row above.</td>
+      </tr>
+      <tr>
+        <td>It skips under load</td>
+        <td>Almost certainly a loose front-plate pin seat</td>
+        <td>The model says skip needs &gt;300&nbsp;Nm with both ends supported. If it skips at working torque, a pin is not held at both ends. Check the front plate holes against the coupon.</td>
+      </tr>
+      <tr>
+        <td>Arm droops a fraction of a degree and stays there</td>
+        <td>Printed flange body creeping under the constant moment</td>
+        <td>Reprint the flange in PA-CF at higher infill, or shorten the reach. Bearings are not the issue &mdash; the load is 2.6&nbsp;% of the 6810's rating.</td>
+      </tr>
+      <tr>
+        <td>Notchy, gritty rotation from new</td>
+        <td>A bearing brinelled during pressing</td>
+        <td>Find it by feel and replace it. Always press on the race you are fitting, never through the balls.</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<footer>
+  <p><b>cycloidal-50-d100 &middot; rev A.</b> Numbers generated from <code>scripts/cad.py</code> and <code>cad/layout.json</code>; drawings are true cross-sections of the exported STEP geometry, produced by <code>scripts/render_steps.py</code>. Full project, including the analysis behind the torque rating, is in <code>Downloads\cycloidal-50-d100</code>.</p>
+  <p>Ticks are saved into this page, so you can close it and come back mid-build.</p>
+</footer>
+
+</div>
+
+<script type="application/json" id="build-state">{"checked":[]}</script>
+<script>
+(function(){
+  "use strict";
+  var TPL = null, api = null, pending = false, timer = null, dirty = false;
+  var boxes = [], saveEl, fillEl, doneEl, totalEl;
+
+  function readState(){
+    try{
+      var el = document.getElementById("build-state");
+      var s = JSON.parse(el.textContent || "{}");
+      return Array.isArray(s.checked) ? s.checked : [];
+    }catch(e){ return []; }
+  }
+  function currentIds(){
+    var out = [];
+    for (var i=0;i<boxes.length;i++){ if (boxes[i].checked) out.push(boxes[i].id); }
+    return out;
+  }
+  function paintProgress(){
+    var n = currentIds().length, t = boxes.length;
+    doneEl.textContent = n; totalEl.textContent = t;
+    fillEl.style.width = t ? (100*n/t).toFixed(1) + "%" : "0%";
+  }
+  function setSaveMsg(msg){ saveEl.textContent = msg; }
+
+  function buildDoc(){
+    var json = JSON.stringify({checked: currentIds()});
+    return TPL.replace(
+      /(<script type="application\/json" id="build-state">)[\s\S]*?(<\/script>)/,
+      function(m, a, b){ return a + json + b; }
+    );
+  }
+
+  function flush(){
+    timer = null;
+    if (!api || pending || !dirty) return;
+    pending = true; dirty = false;
+    setSaveMsg("saving…");
+    api.publish(buildDoc()).then(function(){
+      pending = false;
+      setSaveMsg("saved");
+      if (dirty) schedule();
+    }).catch(function(err){
+      pending = false;
+      var code = err && err.code;
+      if (code === "conflict"){ setSaveMsg("reloading…"); return; }
+      if (code === "not_granted" || code === "not_writer"){
+        api = null; setSaveMsg("view only");
+        return;
+      }
+      setSaveMsg("not saved");
+    });
+  }
+  function schedule(){
+    dirty = true;
+    if (!api){ setSaveMsg("this session only"); return; }
+    setSaveMsg("saving…");
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(flush, 1400);
+  }
+
+  function init(){
+    boxes = Array.prototype.slice.call(document.querySelectorAll("ol.acts input[type=checkbox]"));
+    saveEl = document.getElementById("psave");
+    fillEl = document.getElementById("pfill");
+    doneEl = document.getElementById("pdone");
+    totalEl = document.getElementById("ptotal");
+
+    // capture the untouched document as the publish template BEFORE any state is applied.
+    // this page loads no external scripts of its own, so anything with a src is host-injected
+    // and must not be baked into the version we publish.
+    TPL = ("<!doctype html>\n" + document.documentElement.outerHTML)
+            .replace(/<script\b[^>]*\ssrc=[^>]*>[\s\S]*?<\/script>/gi, "");
+
+    var saved = readState(), map = {};
+    for (var i=0;i<saved.length;i++) map[saved[i]] = true;
+    for (var j=0;j<boxes.length;j++){ if (map[boxes[j].id]) boxes[j].checked = true; }
+    paintProgress();
+
+    for (var k=0;k<boxes.length;k++){
+      boxes[k].addEventListener("change", function(){ paintProgress(); schedule(); });
+    }
+    document.getElementById("reset").addEventListener("click", function(){
+      for (var m=0;m<boxes.length;m++) boxes[m].checked = false;
+      paintProgress(); schedule();
+    });
+
+    if (window.claude && typeof window.claude.use === "function"){
+      setSaveMsg("");
+      window.claude.use("artifact").then(function(a){
+        api = a || null;
+        setSaveMsg(api ? "" : "this session only");
+        if (api && dirty) schedule();
+      }).catch(function(){ api = null; setSaveMsg("this session only"); });
+    } else {
+      setSaveMsg("this session only");
+    }
+  }
+
+  if (document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", init);
+  } else { init(); }
+})();
+</script>

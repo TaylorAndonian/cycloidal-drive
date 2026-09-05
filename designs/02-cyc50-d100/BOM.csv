@@ -1,0 +1,24 @@
+category,item,spec,qty,have/buy,link_or_note
+printed,rear_cup,PA-CF (or PC); cad/rear_cup.stl,1,print,motor plate + shell in one piece
+printed,front_plate,PA-CF (or PC); cad/front_plate.stl,1,print,holds 51 pin ends + the 6810
+printed,disc,PA-CF only; cad/disc.stl,2,print,identical; 14 mm thick; 100% infill
+printed,eccentric_shaft,PC (or PA-CF); cad/eccentric_shaft.stl,1,print,one piece; cams at 180 deg; print vertical
+printed,carrier_rear_plate,PA-CF; cad/carrier_rear_plate.stl,1,print,
+printed,output_flange,PA-CF or PC; cad/output_flange.stl,1,print,includes the arm face plate
+printed,washer_end (2.4 mm),any rigid filament; cad/washer_end.stl,12,print,2 per output pin
+printed,washer_mid (5.0 mm),any rigid filament; cad/washer_mid.stl,6,print,1 per output pin
+printed,coupon_pins_inserts,same material+profile as cup/front plate; cad/coupon_pins_inserts.stl,1,print,PRINT FIRST - sets the pin press fits and insert holes
+printed,coupon_bearings,same material+profile as discs/flange; cad/coupon_bearings.stl,1,print,PRINT FIRST - sets the bearing pockets and journals
+bearing,625ZZ (5x16x5),output-pin rollers - 2 per pin per disc,24,buy,https://www.amazon.com/625ZZ-Shielded-Groove-Precision-Bearings/dp/B01LYL6UI8  (need 3 x 10-packs)
+bearing,6802-2RS (15x24x5),eccentric bearing - one per disc,2,buy,https://www.amazon.com/Sealed-Bearing-6802-2RS-15x24x5-Bearings/dp/B002BBIPHG
+bearing,6801-2RS (12x21x5),input shaft rear journal - fits in the CARRIER PLATE not the cup,1,buy,commonly sold with 6802s; verify size before ordering
+bearing,6804-2RS (20x32x7),carrier rear support,1,buy,https://www.amazon.com/20x32x7-Rubber-Sealed-Bearings-6804-2RS/dp/B00LN4A35E
+bearing,6810-2RS (50x65x7),output flange bearing (carries the arm moment),1,buy,https://www.amazon.com/Bearing-6810-2RS-61810-2RS-50x65x7-Bearings/dp/B0CY8CLZB6  or https://bearingsdirect.com/6810-2rs-ball-bearing-50x65x7-sealed/
+bearing,608ZZ (8x22x7),input shaft front journal,1,have,you have these
+pin,dowel 3 mm x 60 mm DIN 6325 m6 hardened+ground,ring pins,51 (+4 spare),buy,https://www.ebay.com/itm/303964202292 (check the 3 mm x 60 option) or https://www.fusionfixings.co.uk/products/m3-x-60mm-dowel-pin-hard-ground-din-6325 -- FALLBACK: 3 mm h6 silver steel / drill rod cut to 60 mm
+pin,dowel 5 mm x 50 mm DIN 6325 m6 hardened+ground,output pins,6 (+1 spare),buy,same eBay listing has the 5 mm size; verify the 50 mm length
+fastener,M3 x 8 SHCS,motor to rear cup,4,buy,check it does not bottom in your motor; M3x6 if it does
+fastener,M3 x 30 SHCS,front plate to shell inserts (no counterbore - heads sit on the front face),8,buy,
+fastener,M3 heat-set insert 4.0 OD x 5.7 long brass,8 shell top + 6 flange face + 4 cup back face,18 (+2 spare),buy,hole 4.0 dia x 9.0 deep with a 4.6 countersink; VERIFY against your insert datasheet
+fastener,M3 SHCS for the arm,length = arm root thickness + 5 mm,6,buy,6 inserts on PCD 58 + a 10 mm pilot
+consumable,PTFE or lithium grease,ring-pin contacts + disc thrust faces,1,buy,dry running costs ~10-15% efficiency

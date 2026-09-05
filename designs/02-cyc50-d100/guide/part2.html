@@ -1,0 +1,213 @@
+<div class="step">
+  <div class="stepnum">1</div>
+  <div class="stepbody">
+    <h3>Rear cup: inserts, motor, carrier bearing</h3>
+    <p class="why">Order matters here. The motor screw heads live in counterbores that the 6804 pocket sits directly above &mdash; once that bearing is in, you cannot reach them.</p>
+    <div class="two">
+      <div>
+        <ol class="acts" data-sec="s1">
+          <li><input type="checkbox" id="s1-1"><label for="s1-1">Deburr every printed hole. Run a &Oslash;3 drill bit <em>by hand</em> through the 51 pin holes to clear elephant-foot from the first layer.</label></li>
+          <li><input type="checkbox" id="s1-2"><label for="s1-2">Melt in <b>8 inserts</b> in the shell top face (&Oslash;93 PCD) and <b>4 inserts</b> in the cup's back face (&Oslash;90 PCD, these mount the gearbox to your machine).</label></li>
+          <li><input type="checkbox" id="s1-3"><label for="s1-3"><b>Measure your motor's thread depth</b> with a depth gauge or a scrap screw. Screw length = <span class="mono">2.5&nbsp;+ engagement</span>. Most NEMA&nbsp;17s are 4.5&nbsp;mm deep, so <b>M3&times;6</b> (3.5&nbsp;mm engaged) is the safe pick; use M3&times;8 only if you measure &ge;6&nbsp;mm.</label></li>
+          <li><input type="checkbox" id="s1-4"><label for="s1-4">Seat the motor's &Oslash;22 pilot boss in the recess on the back of the cup. It should drop in with a slip fit &mdash; there is 0.3&nbsp;mm of clearance.</label></li>
+          <li><input type="checkbox" id="s1-5"><label for="s1-5">Run the 4 motor screws in from <em>inside</em> the cup, straight down through the counterbores. Snug, then a quarter turn &mdash; you are clamping printed plastic, not steel.</label></li>
+          <li><input type="checkbox" id="s1-6"><label for="s1-6">Press the <b>6804</b> into its &Oslash;32 pocket. It bottoms at <span class="mono">z&nbsp;7.7</span> and stands 0.3&nbsp;mm below the floor face &mdash; that gap is intentional axial float.</label></li>
+          <li><input type="checkbox" id="s1-7"><label for="s1-7">That is the only bearing in the cup. <b>The 6801 does not go here</b> &mdash; it lives in the carrier plate and is fitted in step&nbsp;3.</label></li>
+        </ol>
+        <div class="note"><p>Press bearings with a flat plate across the whole outer race, never on the inner race &mdash; pushing through the balls brinells the raceway and you will feel it as notchiness forever.</p></div>
+      </div>
+      <figure class="sheet">{{DWG_1}}<figcaption>Step 1 &mdash; cup with the motor mounted and the carrier bearing seated in the floor.</figcaption></figure>
+    </div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="stepnum">2</div>
+  <div class="stepbody">
+    <h3>Press the 51 ring pins</h3>
+    <p class="why">This is the longest and most tedious step, and the one that most repays care. These pins are the fixed ring &mdash; every one of them has to end up parallel to the axis.</p>
+    <div class="two">
+      <div>
+        <ol class="acts" data-sec="s2">
+          <li><input type="checkbox" id="s2-1"><label for="s2-1">Chamfer the leading end of each pin lightly if the dowels came square-cut.</label></li>
+          <li><input type="checkbox" id="s2-2"><label for="s2-2">Press each &Oslash;3&times;60 pin into the floor until it <b>bottoms at 8&nbsp;mm</b>. It then stands <span class="dim mono">52&nbsp;mm</span> proud of the floor face.</label></li>
+          <li><input type="checkbox" id="s2-3"><label for="s2-3">Use a drill-press chuck (jaws open, quill as the ram) or an arbor press with a flat pusher. Keep the pin square going in &mdash; &Oslash;3 bends far more easily than &Oslash;4.</label></li>
+          <li><input type="checkbox" id="s2-4"><label for="s2-4">Every fifth pin, check with a small square against the floor face.</label></li>
+          <li><input type="checkbox" id="s2-5"><label for="s2-5">Measure the free ends: lay a straightedge across and confirm all 51 tips sit within about 0.5&nbsp;mm of one plane.</label></li>
+        </ol>
+        <div class="gate">
+          <div class="ghead">Go / no-go &mdash; pin squareness</div>
+          <p>A pin leaning <b>1&deg;</b> is <span class="mono">0.7&nbsp;mm</span> out of place by the time it reaches the front plate. The front plate holes are a light press with 0.02&nbsp;mm of interference &mdash; they will not pull a bent pin straight, they will jam.</p>
+          <p>If a pin is visibly off: pull it, check the hole for a blob or a lifted first layer, and press a fresh pin. Pulling and re-pressing the same hole twice loses the interference &mdash; if a hole ends up loose, reprint the cup.</p>
+        </div>
+      </div>
+      <figure class="sheet">{{DWG_2}}<figcaption>Step 2 &mdash; only one pin lies on the section plane; the other 50 are around the &Oslash;80 circle.</figcaption></figure>
+    </div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="stepnum">3</div>
+  <div class="stepbody">
+    <h3>Build the input shaft and carrier &mdash; and check the indexing</h3>
+    <p class="why">The 180&deg; between the two cams is printed in, not set at assembly. What you are checking is whether the print came out round and on-centre.</p>
+    <div class="two">
+      <div>
+        <ol class="acts" data-sec="s3">
+          <li><input type="checkbox" id="s3-1"><label for="s3-1">Press the <b>cam-A 6802 on from the rear</b>, over the &Oslash;12 journal, until it butts on the &Oslash;17 collar. Cam A is the one offset toward <span class="mono">+x</span>.</label></li>
+          <li><input type="checkbox" id="s3-2"><label for="s3-2">Press the <b>cam-B 6802 on from the front</b>, over the &Oslash;8 journal, until it butts on the other side of the collar.</label></li>
+          <li><input type="checkbox" id="s3-3"><label for="s3-3">Push on the inner races only. The journals are printed &mdash; go slowly and keep them square, and stop if you hear crazing.</label></li>
+        </ol>
+        <div class="gate">
+          <div class="ghead">Go / no-go &mdash; eccentric indexing</div>
+          <p>Support the shaft in V-blocks (or spin it in the 6801 in the cup) and run a dial indicator on each 6802's <b>outer race</b> in turn:</p>
+          <p>&#8226; Total runout on each: <span class="dim mono">1.18&nbsp;mm TIR</span> (that is 2e).<br>
+             &#8226; The two peaks <b>180&deg; apart within 3&deg;</b>. Even 3&deg; only moves a disc centre by 0.03&nbsp;mm.<br>
+             &#8226; The two amplitudes matching within <span class="mono">0.05&nbsp;mm</span>. A difference here shifts torque onto whichever disc has the larger throw.</p>
+          <p>Fail any of these and reprint the shaft. Everything downstream assumes it.</p>
+        </div>
+        <ol class="acts" data-sec="s3">
+          <li><input type="checkbox" id="s3-4"><label for="s3-4">Runout on both cams reads 1.18&nbsp;mm, peaks 180&deg; apart, amplitudes matched.</label></li>
+          <li><input type="checkbox" id="s3-5"><label for="s3-5">Press the <b>6801 into the carrier plate</b>, into the &Oslash;21 pocket in its <em>front</em> face. It bottoms on a 3&nbsp;mm floor at <span class="mono">z&nbsp;18.5</span> and finishes flush with the front face.</label></li>
+          <li><input type="checkbox" id="s3-5b"><label for="s3-5b">Press the six &Oslash;5&times;50 output pins into the <b>carrier plate</b> until flush with its rear face. Do this now, off the machine &mdash; not later, when pressing would push against the 6804.</label></li>
+          <li><input type="checkbox" id="s3-6"><label for="s3-6">Onto each output pin: a <b>2.4&nbsp;mm washer</b>, then <b>two 625ZZ</b>. Grease the pins lightly first.</label></li>
+          <li><input type="checkbox" id="s3-7"><label for="s3-7"><b>Slide the carrier onto the shaft from the REAR end.</b> Its &Oslash;14 boss bore clears the &Oslash;12 journal but not the &Oslash;15 cams &mdash; it only goes on from that side, and there is no way to add it later. The 6801 presses onto the &Oslash;12 journal as it goes.</label></li>
+          <li><input type="checkbox" id="s3-8"><label for="s3-8">Lower the whole sub-assembly into the cup: D-bore over the motor shaft, carrier boss press into the 6804.</label></li>
+        </ol>
+        <div class="note"><p>The D-bore is 12.5&nbsp;mm deep and takes the motor shaft from <span class="mono">z&nbsp;10.0</span>. With a 22&nbsp;mm usable shaft you get full engagement. Longer or shorter shaft: change <code>MOTOR_SHAFT_L</code> and re-run &mdash; <code>check_layout</code> will refuse anything under 8&nbsp;mm of engagement.</p></div>
+      </div>
+      <figure class="sheet">{{DWG_3}}<figcaption>Step 3 &mdash; shaft, both cam bearings, the 6801 in the carrier plate, seated in the cup. Both shaft journals are carried by the carrier; the carrier is grounded on the 6804 and, later, the 6810.</figcaption></figure>
+    </div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="stepnum">4</div>
+  <div class="stepbody">
+    <h3>The output pin stack</h3>
+    <p class="why">Four 625s per pin, not two. A single 5&nbsp;mm roller in a 14&nbsp;mm disc hole would carry the load on a third of the width; two side by side cover 10&nbsp;mm of it.</p>
+    <div class="two">
+      <div>
+        <p>The full stack on each of the six pins, rear to front &mdash; it adds up to exactly the <span class="mono">29.8&nbsp;mm</span> between the carrier face and the flange:</p>
+        <div class="tblwrap">
+        <table style="min-width:0">
+          <thead><tr><th>Order</th><th>Item</th><th class="n">Thickness</th></tr></thead>
+          <tbody>
+            <tr><td class="n">1</td><td>printed washer (short)</td><td class="n">2.4</td></tr>
+            <tr class="hi"><td class="n">2&ndash;3</td><td>625ZZ &times;2 &mdash; <b>disc A rides here</b></td><td class="n">10.0</td></tr>
+            <tr><td class="n">4</td><td>printed washer (long)</td><td class="n">5.0</td></tr>
+            <tr class="hi"><td class="n">5&ndash;6</td><td>625ZZ &times;2 &mdash; <b>disc B rides here</b></td><td class="n">10.0</td></tr>
+            <tr><td class="n">7</td><td>printed washer (short)</td><td class="n">2.4</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <ol class="acts" data-sec="s4">
+          <li><input type="checkbox" id="s4-1"><label for="s4-1">Confirm the first washer + two rollers are already on each pin from step 3.</label></li>
+          <li><input type="checkbox" id="s4-2"><label for="s4-2">Check the washers spin free &mdash; they bear on the roller <em>inner</em> races only, so their OD must stay clear of the outer race.</label></li>
+          <li><input type="checkbox" id="s4-3"><label for="s4-3">Spin each roller pair by hand. Any that feels gritty, swap it now.</label></li>
+        </ol>
+        <div class="note"><p>The drawing shows the finished stack. You build it in three bites: pair A now, the long washer and pair B after disc A goes on, the last washer after disc B.</p></div>
+      </div>
+      <figure class="sheet">{{DWG_4}}<figcaption>Step 4 &mdash; the completed pin stack. Washers are the thin violet slivers between roller pairs.</figcaption></figure>
+    </div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="stepnum">5</div>
+  <div class="stepbody">
+    <h3>Disc A</h3>
+    <p class="why">The disc goes onto its cam bearing and over the first roller pair in one axial movement. Both discs are identical parts and both go on the same way round.</p>
+    <div class="two">
+      <div>
+        <ol class="acts" data-sec="s5">
+          <li><input type="checkbox" id="s5-1"><label for="s5-1">Identify the disc's <b>counterbored face</b> &mdash; one side has a &Oslash;24 pocket, the other a plain &Oslash;22 hole. The counterbore faces <b>forward</b>, toward the output.</label></li>
+          <li><input type="checkbox" id="s5-2"><label for="s5-2">Grease the lobe flanks. A PTFE or lithium film; dry running costs 10&ndash;15&nbsp;% efficiency and all of it becomes heat in the lobes.</label></li>
+          <li><input type="checkbox" id="s5-3"><label for="s5-3">Line the six roller holes up with the six roller pairs and lower the disc, guiding it onto cam A's bearing at the same time.</label></li>
+          <li><input type="checkbox" id="s5-4"><label for="s5-4">Press the disc down until the 6802 seats on the internal ledge &mdash; the bearing ends up centred in the disc's 14&nbsp;mm thickness.</label></li>
+          <li><input type="checkbox" id="s5-5"><label for="s5-5">Turn the motor shaft by hand through two full turns. Disc A should walk around the pins with no tight spot.</label></li>
+        </ol>
+        <div class="brass">
+          <div class="ghead">If it binds here</div>
+          <p>A tight spot that <b>moves with the shaft</b> is cam runout. One that <b>stays with the housing</b> is a leaning ring pin &mdash; find it and fix it now, because after the front plate goes on you cannot.</p>
+          <p>Uniformly stiff all the way round is profile clearance. Measure the printed pin circle with pins in place and the disc across its lobe tips before you touch <code>PROFILE_CLR</code> &mdash; it is usually the print, not the parameter.</p>
+        </div>
+      </div>
+      <figure class="sheet">{{DWG_5}}<figcaption>Step 5 &mdash; disc A on cam A. Its centre sits <span style="font-family:monospace">+0.59&nbsp;mm</span> off axis.</figcaption></figure>
+    </div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="stepnum">6</div>
+  <div class="stepbody">
+    <h3>Disc B, half a lobe out of phase</h3>
+    <p class="why">Disc B sits on the opposite cam so its radial load cancels disc A's. The phase is not something you set by eye &mdash; the roller holes only line up in the right one.</p>
+    <div class="two">
+      <div>
+        <ol class="acts" data-sec="s6">
+          <li><input type="checkbox" id="s6-1"><label for="s6-1">Add the <b>5.0&nbsp;mm washer</b> then <b>two more 625ZZ</b> to each of the six pins.</label></li>
+          <li><input type="checkbox" id="s6-2"><label for="s6-2">Take the second disc, counterbore forward again, and rotate it <span class="dim mono">3.6&deg;</span> (180&deg;/50) relative to disc A &mdash; one half lobe.</label></li>
+          <li><input type="checkbox" id="s6-3"><label for="s6-3">Lower it over the second roller pair and onto cam B's bearing. <b>Do not force the phase</b> &mdash; with the rollers already on the pins the disc only drops on in the correct one. If it will not sit, rotate it one hole position and try again.</label></li>
+          <li><input type="checkbox" id="s6-4"><label for="s6-4">Press until the 6802 seats on its ledge.</label></li>
+          <li><input type="checkbox" id="s6-5"><label for="s6-5">Add the last <b>2.4&nbsp;mm washer</b> to each pin. The stack should now sit flush with the pin ends within a few tenths.</label></li>
+          <li><input type="checkbox" id="s6-6"><label for="s6-6">Turn the input again. It should feel noticeably <em>smoother</em> than with one disc &mdash; that is the radial forces cancelling.</label></li>
+        </ol>
+        <div class="note"><p>Sanity check by eye: looking down the axis, any lobe tip of disc B should sit opposite a lobe root of disc A across the centre.</p></div>
+      </div>
+      <figure class="sheet">{{DWG_6}}<figcaption>Step 6 &mdash; disc B at <span style="font-family:monospace">&minus;0.59&nbsp;mm</span>, disc A faded behind it.</figcaption></figure>
+    </div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="stepnum">7</div>
+  <div class="stepbody">
+    <h3>Output flange and its two bearings</h3>
+    <p class="why">The flange plus the carrier plate form a rigid cage around both discs, carried on two bearings 60&nbsp;mm apart. That span is what resists the arm's moment.</p>
+    <div class="two">
+      <div>
+        <ol class="acts" data-sec="s7">
+          <li><input type="checkbox" id="s7-1"><label for="s7-1">Melt <b>6 inserts</b> into the flange face plate (&Oslash;58 PCD) if you have not already.</label></li>
+          <li><input type="checkbox" id="s7-2"><label for="s7-2">Press the <b>608</b> into the pocket in the flange's rear face.</label></li>
+          <li><input type="checkbox" id="s7-3"><label for="s7-3">Bring the flange down onto the six output pin ends &mdash; <span class="mono">12.2&nbsp;mm</span> of engagement into 12.5&nbsp;mm blind holes &mdash; with the 608 passing over the shaft's &Oslash;8 front journal at the same time.</label></li>
+          <li><input type="checkbox" id="s7-4"><label for="s7-4">Press evenly, alternating around the six pins. Six simultaneous press fits need real force; if it stops moving, back off and check for a cocked pin rather than pushing harder.</label></li>
+          <li><input type="checkbox" id="s7-5"><label for="s7-5">Press the <b>6810</b> onto the flange's &Oslash;50 boss, inner race first, until it seats against the shoulder.</label></li>
+          <li><input type="checkbox" id="s7-6"><label for="s7-6">Turn the input once more. The flange should now rotate as one with the carrier.</label></li>
+        </ol>
+      </div>
+      <figure class="sheet">{{DWG_7}}<figcaption>Step 7 &mdash; flange, front journal bearing and the 6810 that carries the arm load.</figcaption></figure>
+    </div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="stepnum">8</div>
+  <div class="stepbody">
+    <h3>Front plate closes the ring</h3>
+    <p class="why">Fifty-one light press fits and one bearing, all engaging together. Let the eight tie bolts do the work &mdash; they are designed to draw the plate down.</p>
+    <div class="two">
+      <div>
+        <ol class="acts" data-sec="s8">
+          <li><input type="checkbox" id="s8-1"><label for="s8-1">Offer the plate up so that <b>all 51 pin tips start in their holes and the 6810 starts in its bore at the same time</b>. Get it sitting square before applying any force.</label></li>
+          <li><input type="checkbox" id="s8-2"><label for="s8-2">Start all eight <b>M3&times;30</b> bolts by hand into the shell inserts.</label></li>
+          <li><input type="checkbox" id="s8-3"><label for="s8-3">Draw the plate down in <b>quarter turns, star pattern</b>, going round several times. Never pull one corner down alone.</label></li>
+          <li><input type="checkbox" id="s8-4"><label for="s8-4">There are <b>no counterbores</b> at this diameter &mdash; the heads sit on the front face, clear of the &Oslash;72 arm plate.</label></li>
+          <li><input type="checkbox" id="s8-5"><label for="s8-5">Stop tightening when the plate is fully seated against the shell. You are clamping printed plastic.</label></li>
+        </ol>
+        <div class="stop">
+          <div class="ghead">If it will not go down</div>
+          <p>Do not force it. One pin is bent or leaning. Back the bolts off, lift the plate, and find the pin whose tip is out of position &mdash; a straightedge across the pin ends will show it.</p>
+        </div>
+        <div class="gate">
+          <div class="ghead">Go / no-go &mdash; finished drive</div>
+          <p>&#8226; Two full turns of the input feel <b>uniform</b>, with no periodic tight spot.<br>
+             &#8226; Backlash at the output is roughly <span class="mono">0.3&ndash;0.4&deg;</span>. Much more means the profile clearance is too generous.<br>
+             &#8226; Free-running current on your driver at low speed is no more than about <b>15&nbsp;%</b> above the bare motor.</p>
+        </div>
+      </div>
+      <figure class="sheet">{{DWG_8}}<figcaption>Step 8 &mdash; complete. Overall length 88.1&nbsp;mm from motor face to arm face.</figcaption></figure>
+    </div>
+  </div>
+</div>
+</section>
