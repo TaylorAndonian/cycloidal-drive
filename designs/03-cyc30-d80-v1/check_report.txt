@@ -1,0 +1,63 @@
+==========================================================================
+  CYCLOIDAL 30:1   --   31 pins / 30 lobes
+==========================================================================
+
+Profile
+  [OK ] curtate ratio R/(e*N)                         1.266   (want 1.1..1.6)
+  [OK ] disc crest radius                            29.790 mm
+  [OK ] disc valley radius                           28.210 mm
+        disc OD = 59.58 mm,  lobe height = 1.58 mm
+  [OK ] crest vs analytic (R-Rr+e)                    0.000 mm  (want <= 0.02)
+
+Ring
+  [OK ] ring pin pitch                                6.283 mm
+  [OK ] gap between adjacent pins                     2.283 mm  (want >= 1.5)
+  [OK ] pin OD to housing OD (wall)                   7.000 mm  (want >= 4.0)
+  [OK ] tie screw to housing OD                       1.800 mm  (want >= 1.5)
+  [OK ] tie screw to pin pocket                       1.700 mm  (want >= 1.0)
+  [OK ] tie screw length vs stack                     5.000 mm  (want >= 2.0)
+
+Disc webs
+  [OK ] output hole Ø                                 7.580 mm
+  [OK ] web: bearing bore -> output hole              4.710 mm  (want >= 3.0)
+  [OK ] rim: output hole -> valley                    5.420 mm  (want >= 3.0)
+  [OK ] ligament between output holes                 7.343 mm  (want >= 4.0)
+
+Shaft
+  [OK ] cam envelope radius                           6.790 mm
+  [OK ] min wall, cam journal -> motor bore           2.685 mm  (want >= 2.0)
+  [OK ] eccentric brg OD vs disc bore                 0.000 mm  (want -0.01..0.01)
+
+Stack-up
+  [OK ] disc stack inside sleeve                      0.500 mm  (want 0.2..1.0)
+  [OK ] sleeve bore clearance over disc crest         1.210 mm  (want >= 0.5)
+  [OK ] carrier OD clearance in sleeve                1.000 mm  (want >= 0.5)
+  [OK ] boss length vs ring plate                     0.500 mm  (want 0.2..1.5)
+  [OK ] output brg OD vs housing                     14.000 mm  (want >= 8.0)
+  [OK ] boss wall over nose bearing                   9.000 mm  (want >= 5.0)
+  [OK ] overall length                               51.500 mm  (want <= 52.0)
+  [OK ] overall diameter                             80.000 mm  (want <= 80.0)
+
+Capacity
+        @  8.0 Nm out:   105.3 N/pin,  bending   63.3 MPa  (dowel ~700 MPa yield)
+        @ 12.0 Nm out:   157.9 N/pin,  bending   94.9 MPa  (dowel ~700 MPa yield)
+        lobe-contact limited torque ~ 8.7 Nm  (scaled from the Ø100 unit)
+
+        ratio 30:1   ->  NEMA 17 at 0.45 Nm holding = 10.1 Nm at the joint (75% eff.)
+
+==========================================================================
+  ALL CHECKS PASS
+==========================================================================
+  profile points        3600
+  worst gap             +0.0800 mm  at theta = 66.0 deg
+  target backlash       +0.0800 mm
+  pins at backlash      31 .. 31  of 31
+  closest pins at theta=0:
+      pin  0  gap +0.0800 mm
+      pin  8  gap +0.0800 mm
+      pin 23  gap +0.0800 mm
+      pin 24  gap +0.0800 mm
+      pin  7  gap +0.0800 mm
+      pin 15  gap +0.0800 mm
+
+  MESH OK

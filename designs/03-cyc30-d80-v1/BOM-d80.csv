@@ -1,0 +1,24 @@
+category,item,spec,qty,have/buy,link_or_note
+printed,coupon,same material + profile as the real parts; stl/coupon.stl,1,print,PRINT FIRST - carries every press fit and clearance in the box
+printed,motor_plate,PA-CF or PC; stl/motor_plate.stl,1,print,"NEMA 17 face, pilot recess, rear 6801 seat, 31 pin pockets"
+printed,sleeve,PA-CF or PC; stl/sleeve.stl,1,print,ring body; all 31 pins bear against its bore
+printed,disc_a,PA-CF only; stl/disc_a.stl,1,print,"NOT interchangeable with disc_b - print both, do not print 2 of one"
+printed,disc_b,PA-CF only; stl/disc_b.stl,1,print,lobes phased 6 deg (half a lobe pitch) because its cam is 180 deg round
+printed,carrier,PA-CF; stl/carrier.stl,1,print,"output plate + boss; 8 dowel press fits, 608 seat, 4 x M4 inserts"
+printed,ring_plate,PA-CF or PC; stl/ring_plate.stl,1,print,captures the 31 pin tops and holds the 6808
+printed,face_plate,PA-CF or PC; stl/face_plate.stl,1,print,arm interface: 6 x M3 clearance on PCD 50
+printed,shaft,PA-CF; stl/shaft.stl,1,print,"print VERTICAL, 100% infill; or turn from Ø15 steel if you can"
+bearing,6801-2RS (12x21x5),2 per disc on the cams + 1 rear support in the motor plate,5,buy,"https://www.amazon.com/uxcell-6801-2RS-Bearing-12x21x5mm-Bearings/dp/B07TJDVQ3D  (10-pack ~$10, gives spares)"
+bearing,6808-2RS (40x52x7),output bearing in the ring plate - carries the arm load,1,buy,https://bearingsdirect.com/6808-2rs-ball-bearing-40x52x7-sealed-6808ddu/  or https://www.amazon.com/6808-2RS-61808RS-Bearing-40x52x7-Bearings/dp/B0DPZC1TFP
+bearing,608ZZ (8x22x7),"shaft nose journal, sits in the carrier boss",1,HAVE,you have a pile of these
+pin,"dowel Ø4 x 30, DIN 6325 m6, hardened + ground",ring pins,31 (+4 spare),buy,https://www.aspenfasteners.com/m4-x-30mm-din-6325-metric-solid-dowel-pins-steel/  -- do NOT substitute soft/stainless: 31 soft pins will brinell and give back the backlash you designed out
+pin,"dowel Ø6 x 32, hardened",output pins,8 (+1 spare),buy,https://www.amazon.com/Dowel-Through-Hardened-Finish-Quantity/dp/B07FMKL5NK  (100-pack)
+fastener,M3 x 45 SHCS,"housing tie screws, ring plate -> motor plate",6,buy,40 mm of stack + 5 mm of insert engagement
+fastener,"M3 heat-set insert, 4.0 OD x 5.7","motor plate, 6 places",6 (+2 spare),buy,hole is Ø4.0 x 5.0 deep
+fastener,"M4 heat-set insert, 5.6 OD x 8.0","carrier boss, 4 places",4 (+1 spare),buy,hole is Ø5.6 x 8.0 deep
+fastener,M4 x 10 SHCS,face plate to carrier boss,4,buy,
+fastener,M3 x 8 SHCS,motor to motor plate,4,buy,check it does not bottom in your NEMA 17; M3 x 6 if it does
+fastener,M3 x 4 grub screw,shaft to motor shaft flat,1,buy,tighten BEFORE the sleeve goes on - the collar is buried afterwards
+fastener,M3 SHCS for the arm,length = arm root thickness + 6 mm,6,buy,6 holes on PCD 50 in the face plate
+hardware,shim washer Ø30 x 0.5,between disc A and disc B,1,buy,any 0.5 mm shim that clears Ø21 and stays under Ø59; or print one
+consumable,PTFE or lithium grease,"ring pins, output pin holes, disc thrust faces",1,buy,the output pin holes are a sliding contact - do not run them dry
