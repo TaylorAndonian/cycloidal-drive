@@ -1,0 +1,15 @@
+Section,Qty,Part,Spec,Where used,Buy?,Link
+Bearings,1,6810-2RS,50x65x7 thin-section,Main output bearing (housing <-> output flange),BUY,https://www.amazon.com/Bearing-6810-2RS-61810-2RS-50x65x7-Bearings/dp/B0CY8CLZB6
+Bearings,1,6704-2RS,20x27x4 thin-section,Rear output support (rear ring on back-plate boss),BUY,https://www.amazon.com/20x27x4-Rubber-Sealed-Bearings-6704-2RS/dp/B01HBXKDBE
+Bearings,4,6803-2RS,17x26x5,Eccentric bearings (2 per disc),BUY,https://www.amazon.com/Bearing-6803-2RS-17x26x5-Sealed-Bearings/dp/B002BBI5WQ
+Bearings,16,MR105ZZ,5x10x4,Output-pin rollers (1 per pin per disc),BUY (2 x 10-pack),https://www.amazon.com/Hobbypower-MR105ZZ-Bearing-5x10x4mm-Bearings/dp/B00SZZMERY
+Bearings,1,608ZZ,8x22x7,Input shaft front support (in output flange),ON HAND,
+Rods,33,Dowel pin,Ø4 x 30 mm (hardened or stainless),31 ring pins + 2 output-cap locating dowels,BUY,https://www.amazon.com/DIN-Dowel-Pin-Stainless-Steel/dp/B07CVLFNXH
+Rods,8,Shoulder bolt,Ø5 shoulder x 25 mm shoulder length; M4 thread; head <=Ø9.5 x 4.8; thread <=8.5,Output pins (clamp rear ring to output flange),BUY,https://us.amazon.com/uxcell-Stainless-Socket-Shoulder-Length/dp/B077GXK4P5
+Hardware,21,M3 heat-set insert,Ø4.0 hole x ~5.7 long,"housing 6 rear + 6 front, output flange 8, input shaft 1",likely on hand,
+Hardware,8,M4 heat-set insert,Ø5.6 hole x ~8 long,output flange rear (shoulder bolts),likely on hand,
+Hardware,4,M3 x 6 SHCS,,Motor to back plate (from inside),likely on hand,
+Hardware,6,M3 x 12 SHCS,,Back plate to housing (tie screws; lengthen to add a mounting bracket),likely on hand,
+Hardware,10,M3 x 8 flat head (countersunk),,6 front retainer + 4 output cap,likely on hand,
+Hardware,1,M3 x 6 SHCS + M4 DIN 9021 washer (4.3x12x1),,Input shaft end clamp (through output cap centre hole),likely on hand,
+Hardware,4,M3 SHCS (arm thickness + 7 mm),,Arm to output (4x M3 on PCD 40),likely on hand,
